@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let data = [
+  {
+    principal:2500,
+    time:1.8,
+    },
+  {
+     principal:1000,
+    time:5
+    },
+  {
+     principal:3000,
+    time:1
+    },
+  {
+    principal:2000,
+   time:3
+  }
+  ];
+function interestCalculator(arr){
+ 
+  let interestData = data
+  
+  for(let x =0; x<=3; x++){
+    
+      if((interestData[x].principal>=2500) && (interestData[x].time > 1 && interestData[x].time < 3)){
+        interestData[x].rate=3;
+      ans=(interestData[x].principal*interestData[x].rate*interestData[x].time)/100;
+    interestData[x].interest=ans;
+// console.log(interestData[x].interest);
+//       console.log("\n");
+        
+      }
+      else if((interestData[x].principal>=2500) && (interestData[x].time >=3)){
+        interestData[x].rate=4;
+      ans=(interestData[x].principal*interestData[x].rate*interestData[x].time)/100;
+    interestData[x].interest=ans;
+// console.log(interestData[x].interest);
+//       console.log("\n");
+        
+      } 
+      else if((interestData[x].principal < 2500) || (interestData[x].time <=1)){
+        interestData[x].rate=2;
+      ans=(interestData[x].principal*interestData[x].rate*interestData[x].time)/100;
+    interestData[x].interest=ans;
+// console.log(interestData[x].interest);
+      //console.log("\n");
+        
+      }
+      else{
+        interestData[x].rate = 1;
+        }
+  }
+        //consol.log("\n")
+console.log("array data logged from function before returning...");
+    console.log(interestData);
+    //console.log("/n")
+  
+  return interestData;
+  }
+ 
+interestCalculator(data);
+    </script>
+</body>
+</html>
